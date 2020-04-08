@@ -1,0 +1,312 @@
+@import "mixins.styl"
+
+@keyframes scale-in
+  0%
+    opacity 0
+    transform translate(-50%, -50%) scale(.5)
+
+  100%
+    transform translate(-50%, -50%)
+
+@keyframes scale-out
+  0%
+    transform translate(-50%, -50%)
+
+  100%
+    opacity 0
+    transform translate(-50%, -50%) scale(.5)
+
+.scale-in
+  animation scale-in .3s ease-in-out
+
+.scale-out
+  animation scale-out .3s ease-in-out
+
+.fade-in-enter-active
+  transition opacity .2s
+
+.fade-in-enter
+  opacity 0
+
+.fade-enter-active, .fade-leave-active
+  transition opacity .2s
+
+.fade-enter, .fade-leave-to
+  opacity 0
+
+.slide-in-enter-active
+  transition transform .2s
+
+.slide-in-enter
+  transform translate3d(100%, 0, 0)
+
+.slide-enter-active, .slide-leave-active
+  transition transform .2s
+
+.slide-enter, .slide-leave-to
+  transform translate3d(100%, 0, 0)
+
+.slide-up-enter-active, .slide-up-leave-active,
+.slide-right-enter-active, .slide-right-leave-active,
+.slide-down-enter-active, .slide-down-leave-active,
+.slide-left-enter-active, .slide-left-leave-active
+  transition transform .2s
+
+.slide-up-enter, .slide-up-leave-to
+  transform translateY(100%)
+
+.slide-right-enter, .slide-right-leave-to
+  transform translateX(-100%)
+
+.slide-down-enter, .slide-down-leave-to
+  transform translateY(-100%)
+
+.slide-left-enter, .slide-left-leave-to
+  transform translateX(100%)
+
+.flex
+  display flex
+
+  &.is-inline
+    display inline-flex
+
+  &.is-column
+    flex-direction column
+
+  &.is-wrap
+    flex-wrap wrap
+
+  &.is-nowrap
+    flex-wrap nowrap
+
+  &.is-center
+    justify-content center
+
+  &.is-middle
+    align-items center
+
+.flex-item
+  flex 1
+
+.form
+  padding 0 15px
+  margin 15px 15px 25px
+
+.form-item
+  position relative
+  display flex
+  align-items center
+  padding 10px 0
+  font-size 14px
+  color #333
+
+  &:not(:last-child)
+    bottom-1px-border(#ddd)
+
+.form-item-hd
+  width 80px
+  margin-right 10px
+
+.form-item-bd
+  flex 1
+
+.form-label
+  display block
+  line-height 28px
+
+.form-input
+  height 28px
+  font-size 14px
+  color #333
+
+.form-code
+  height 36px
+
+.form-help
+  margin 25px 0
+  line-height 1.5
+  text-align center
+  font-size 14px
+  color #333
+
+  a
+    color #3c99ff
+
+.button
+  display block
+  border-radius 4px
+  line-height 40px
+  text-align center
+  font-size 16px
+  font-weight 700
+  color #3c99ff
+  background #f5f5f5
+
+  &:active
+    opacity .8
+
+  & + .button
+    margin-top 15px
+
+  &.is-mini
+    display inline-block
+    width auto
+    padding 0 15px
+    line-height 32px
+    font-size 14px
+
+  &.is-primary
+    color #fff
+    background #3c99ff
+
+  &.is-success
+    color #fff
+    background #4cd964
+
+.card
+  box-shadow 0 2px 12px rgba(0, 0, 0, .1)
+  border-radius 4px
+  background #fff
+
+.mask
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index 99
+  display flex
+  background rgba(0, 0, 0, .6)
+
+.toolbar
+  padding 0 16px
+  line-height 2
+  font-size 14px
+  color #333
+  overflow hidden
+
+.toolbar-item
+  margin 16px 0
+
+.picker-item
+  position relative
+  border-radius 4px
+  padding 0 8px
+  margin 0 8px
+  line-height 28px
+  font-size 12px
+  background #f5f5f5
+
+  &.is-datepicker
+    border 1px solid #ddd
+    background transparent
+
+  &.is-access:after
+    content ''
+    position absolute
+    top 6px
+    right 8px
+    width 8px
+    height 8px
+    border-top 1px solid #333
+    border-right 1px solid #333
+    transform rotate(135deg)
+
+.record-item
+  position relative
+  display flex
+  justify-content center
+  align-items center
+  height 48px
+  padding 0 8px
+  line-height 1.6
+  text-align center
+  font-size 12px
+  color #333
+  bottom-1px-border(#ddd)
+
+  &.is-title
+    font-size 14px
+    background #f5f5f5
+
+  .item
+    display -webkit-box
+    width 100%
+    -webkit-box-orient vertical
+    -webkit-line-clamp 2
+    text-overflow ellipsis
+    overflow hidden
+
+
+.total-bar
+  position fixed
+  right 0
+  bottom 0
+  left 0
+  z-index 1
+  padding 8px 16px
+  line-height 20px
+  font-size 14px
+  color #333
+  background #f5f5f5
+
+.total-title
+  width 56px
+
+.record-detail, .notice-detail
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index 9
+  display flex
+  flex-direction column
+  background #fff
+
+.record-detail-close, .notice-detail-close
+  position absolute
+  top 2.5px
+  right 2.5px
+  z-index 1
+  width 40px
+  height 40px
+  padding 8px
+
+  .icon
+    background #333
+
+.record-detail-hd, .notice-detail-hd
+  line-height 45px
+  text-align center
+  font-size 18px
+  color #333
+
+.record-detail-bd, .notice-detail-bd
+  flex 1
+  padding 15px
+  line-height 1.5
+  font-size 14px
+  word-wrap break-word
+  word-break break-all
+  color #666
+  overflow-y auto
+  -webkit-overflow-scrolling touch
+
+.load-more
+  line-height 40px
+  text-align center
+  font-size 14px
+  color #999
+
+.ellipsis
+  white-space nowrap
+  text-overflow ellipsis
+  overflow hidden
+
+.multi-ellipsis
+  display -webkit-box
+  -webkit-box-orient vertical
+  -webkit-line-clamp 2
+  text-overflow ellipsis
+  overflow hidden
