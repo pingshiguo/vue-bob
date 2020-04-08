@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <div class="container" :class="{'is-show-footer': showFooter}">
-      <transition name="slide-in">
-        <router-view class="page"/>
-      </transition>
-      <transition name="slide-up">
-        <tab-bar v-show="showFooter"/>
-      </transition>
-    </div>
+    <transition name="slide-in">
+      <router-view class="container" :class="{'is-show-footer': showFooter}"/>
+    </transition>
+    <transition name="slide-up">
+      <tab-bar v-show="showFooter"/>
+    </transition>
   </div>
 </template>
 
@@ -30,6 +28,10 @@
       title () {
         return this.$route.meta.title
       }
+    },
+    mounted () {
+      let vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
     }
   }
 </script>
@@ -38,6 +40,7 @@
   @import "./stylus/index.styl"
 
   .container
+    position relative
     display flex
     flex-direction column
     min-height 100vh
@@ -46,8 +49,8 @@
       padding-top 45px
 
     &.is-show-footer
-      padding-bottom 50px
+      padding-bottom 52px
 
-  .page
-    flex 1 0 auto
+  .container
+    min-height calc(var(--vh, 1vh) * 100)
 </style>

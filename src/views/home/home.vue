@@ -50,32 +50,30 @@
         </div>
       </div>
     </div>
-    <div class="games">
-      <div class="game-nav-bar">
-        <div class="game-nav-item is-active">
-          <div class="game-nav-title">体育赛事</div>
-          <div class="game-nav-desc">SPORTS EVENTS</div>
-        </div>
-        <div class="game-nav-item">真人</div>
-        <div class="game-nav-item">电竞</div>
-        <div class="game-nav-item">棋牌</div>
-        <div class="game-nav-item">彩票</div>
-        <div class="game-nav-item">电游</div>
-        <div class="game-nav-item">自选</div>
+    <div class="game-nav-bar">
+      <div class="game-nav-item is-active">
+        <div class="game-nav-title">体育赛事</div>
+        <div class="game-nav-desc">SPORTS EVENTS</div>
       </div>
-      <div class="game-list">
-        <div class="game-item">
-          <div class="game-item-hd">
-            <div class="star">
-              <img src="../../assets/images/icon_star_active.png" alt="">
-            </div>
+      <div class="game-nav-item">真人</div>
+      <div class="game-nav-item">电竞</div>
+      <div class="game-nav-item">棋牌</div>
+      <div class="game-nav-item">彩票</div>
+      <div class="game-nav-item">电游</div>
+      <div class="game-nav-item">自选</div>
+    </div>
+    <div class="game-list">
+      <div v-for="item in 5" :key="item" class="game-item">
+        <div class="game-item-hd">
+          <div class="star">
+            <img src="../../assets/images/icon_star_active.png" alt="">
           </div>
-          <div class="game-item-bd">
-            <div class="game-title">BOB体育</div>
-            <div class="game-desc">
-              625
-              <span>体育赛事</span>
-            </div>
+        </div>
+        <div class="game-item-bd">
+          <div class="game-title">BOB体育</div>
+          <div class="game-desc">
+            625
+            <span>体育赛事</span>
           </div>
         </div>
       </div>
@@ -118,11 +116,15 @@
 
 <style lang="stylus" scoped>
 
+  .home
+    padding-bottom 0
+
   .swiper, .swiper-item, .swiper-item img
+    width 100%
     height 185px
 
   .notice-bar
-    position fixed
+    position absolute
     top 185px
     right 0
     left 0
@@ -206,18 +208,26 @@
     margin-top 5px
 
   .games
-    position relative
-    flex 1
-    padding-bottom 52px
+    position absolute
+    top 275px
+    right 0
+    bottom 0
+    left 0
+    z-index 1
+    display flex
+    flex-direction column
+    overflow hidden
     overflow-y auto
+    -webkit-overflow-scrolling touch
 
   .game-nav-bar
     position absolute
-    top 0
+    top 275px
     right 0
     left 0
     z-index 1
     display flex
+    width 100%
     height 41px
     margin-bottom 1px
 
@@ -234,35 +244,48 @@
     color #666
     background #fff
 
-    &:not(.is-active):after
+    &:not(.is-active)
+      outline linear-gradient(0, #e8ecee, #999)
+
+    /*&:not(.is-active):after
       content ''
       position absolute
-      bottom -4rpx
+      left 0
+      bottom 0
       display inline-block
       width 100%
       height 2px
       background linear-gradient(0, #e8ecee, #999)
       opacity .2
+      transform translateY(100%)*/
 
     &.is-active
       flex-shrink 0
       width 113px
+      margin-right -1px
       margin-bottom 0
       color #fff
       background url(../../assets/images/game_nav_item_active.png) no-repeat
       background-size 100% auto
 
   .game-nav-title
-    padding-top 8px
+    padding-top 6px
 
   .game-nav-desc
     width 200%
-    font-size 24 rpx
+    font-size 12px
     transform scale(.5)
 
   .game-list
-    padding 0 10px
-    margin-top 45px
+    position absolute
+    top 275px
+    right 0
+    bottom 0
+    left 0
+    padding 42px 10px 52px
+    overflow hidden
+    overflow-y auto
+    -webkit-overflow-scrolling touch
 
   .game-item
     position relative
