@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class="container" :class="{'is-show-footer': showFooter}">
-      <router-view class="page"/>
+      <transition name="slide-in">
+        <router-view class="page"/>
+      </transition>
       <transition name="slide-up">
         <tab-bar v-show="showFooter"/>
       </transition>
