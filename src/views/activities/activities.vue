@@ -20,10 +20,10 @@
         <div class="activity-time">
           <time>2020-04-08至2020-04-20</time>
         </div>
-        <div class="activity-more">
+        <router-link to="/activities/1" class="activity-more">
           查看详情
           <i class="more"></i>
-        </div>
+        </router-link>
         <span
           class="activity-tag"
           style="background-image: url(https://www.bob2020.com/assets/mine/discount/latest_activity.png)">
@@ -120,6 +120,7 @@
     position absolute
     right 17.5px
     bottom 20px
+    display block
     width 91px
     height 125px
     padding-top 6px

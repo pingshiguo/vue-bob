@@ -3,7 +3,9 @@ import Router from 'vue-router'
 
 const Home = () => import('../views/home/home')
 
-const Activityies = () => import('../views/activities/activities')
+const Activities = () => import('../views/activities/activities')
+
+const Activity = () => import('../views/activity/activity')
 
 Vue.use(Router)
 
@@ -19,11 +21,20 @@ export default new Router({
     },
     {
       path: '/activities',
-      component: Activityies,
+      component: Activities,
       meta: {
         showHeader: true,
         showFooter: true,
         title: '优惠活动'
+      }
+    },
+    {
+      path: '/activities/:id',
+      component: Activity,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '优惠活动详情'
       }
     }
   ]
