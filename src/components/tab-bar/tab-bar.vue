@@ -1,6 +1,6 @@
 <template>
-  <div class="tab-bar">
-    <router-link to="/" class="tab-item">
+  <footer class="tab-bar">
+    <router-link to="/activities" class="tab-item" replace>
       <div class="tab-icon">
         <img src="../../assets/images/icon_discount.png" alt="">
       </div>
@@ -8,7 +8,7 @@
         <span class="content">优惠</span>
       </div>
     </router-link>
-    <router-link to="/" class="tab-item">
+    <router-link to="/service" class="tab-item" replace>
       <div class="tab-icon">
         <img src="../../assets/images/icon_message.png" alt="">
       </div>
@@ -16,7 +16,7 @@
         <span class="content">客服</span>
       </div>
     </router-link>
-    <router-link to="/" class="tab-item is-home is-active">
+    <router-link to="/" class="tab-item is-home" exact replace>
       <div class="tab-icon">
         <img src="../../assets/images/icon_logo.png" alt="">
       </div>
@@ -24,7 +24,7 @@
         <span class="content">首页</span>
       </div>
     </router-link>
-    <router-link to="/" class="tab-item">
+    <router-link to="/sponsor" class="tab-item" replace>
       <div class="tab-icon">
         <img src="../../assets/images/icon_sponsor.png" alt="">
       </div>
@@ -32,7 +32,7 @@
         <span class="content">赞助</span>
       </div>
     </router-link>
-    <router-link to="/" class="tab-item">
+    <router-link to="/user" class="tab-item" replace>
       <div class="tab-icon">
         <img src="../../assets/images/icon_user.png" alt="">
       </div>
@@ -40,7 +40,7 @@
         <span class="content">我的</span>
       </div>
     </router-link>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -69,7 +69,7 @@
     align-items center
     width 100%
 
-    &.is-active .tab-label .content
+    &.router-link-active .tab-label .content
       color #3189fa
 
     &.is-home .tab-icon

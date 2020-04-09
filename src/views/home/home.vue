@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <main class="home">
     <swiper class="swiper" :options="options">
       <swiper-slide class="swiper-item">
         <img src="../../assets/images/banner_01.jpg" alt="">
@@ -63,7 +63,11 @@
       <div class="game-nav-item">自选</div>
     </div>
     <div class="game-list">
-      <div v-for="item in 5" :key="item" class="game-item">
+      <div
+        v-for="item in 5"
+        :key="item"
+        class="game-item"
+        style="background-image: url(https://www.bob2020.com/assets/home/gameList/card_sports_bob.png)">
         <div class="game-item-hd">
           <div class="star">
             <img src="../../assets/images/icon_star_active.png" alt="">
@@ -78,7 +82,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -240,14 +244,11 @@
     width 100%
     margin-bottom 7.5px
     text-align center
-    font-size 13px
+    font-size 14px
     color #666
     background #fff
 
-    &:not(.is-active)
-      outline linear-gradient(0, #e8ecee, #999)
-
-    /*&:not(.is-active):after
+    &:not(.is-active):after
       content ''
       position absolute
       left 0
@@ -257,7 +258,7 @@
       height 2px
       background linear-gradient(0, #e8ecee, #999)
       opacity .2
-      transform translateY(100%)*/
+      transform translateY(100%)
 
     &.is-active
       flex-shrink 0
@@ -294,7 +295,6 @@
     margin-bottom 6px
     font-size 18px
     color #fff
-    background-image url(https://www.bob2020.com/assets/home/gameList/card_sports_bob.png)
     background-repeat no-repeat
     background-size 100% auto
 
