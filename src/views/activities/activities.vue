@@ -83,6 +83,7 @@
 
   .activity-list
     margin-top 49px
+    margin-bottom 26px
 
   .activity-item
     position relative
@@ -140,7 +141,6 @@
     position absolute
     top 24px
     left 21px
-    z-index 1
     display inline-block
     width 64px
     height 32px
