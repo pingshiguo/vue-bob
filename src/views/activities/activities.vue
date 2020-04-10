@@ -12,7 +12,7 @@
       </a>
     </nav>
     <ul class="activity-list">
-      <li class="activity-item">
+      <li class="activity-item" @click="$router.push('/activities/9')">
         <div class="activity-banner">
           <img src="https://avatar.xaqlt.com/file1/23,ee08bfa8fae6" alt="">
           <div class="activity-mask"></div>
@@ -20,10 +20,10 @@
         <div class="activity-time">
           <time>2020-04-08至2020-04-20</time>
         </div>
-        <router-link to="/activities/1" class="activity-more">
+        <div class="activity-more">
           查看详情
           <i class="more"></i>
-        </router-link>
+        </div>
         <span
           class="activity-tag"
           style="background-image: url(https://www.bob2020.com/assets/mine/discount/latest_activity.png)">
@@ -120,7 +120,6 @@
     position absolute
     right 17.5px
     bottom 20px
-    display block
     width 91px
     height 125px
     padding-top 6px
