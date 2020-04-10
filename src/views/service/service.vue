@@ -178,16 +178,18 @@
   .section
     margin 0 10px
 
-  .collapse-hd
+  .collapse:not(:last-child) .collapse-hd
     position relative
-    display flex
-    align-items center
-    height 70px
     bottom-1px-border(#ddd)
 
     &:after
       right 15px
       left 54px
+
+  .collapse-hd
+    display flex
+    align-items center
+    height 70px
 
   .buttons
     position fixed
