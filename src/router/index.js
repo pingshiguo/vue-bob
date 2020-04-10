@@ -7,6 +7,8 @@ const Activities = () => import('../views/activities/activities')
 
 const Activity = () => import('../views/activity/activity')
 
+const Service = () => import('../views/service/service')
+
 Vue.use(Router)
 
 export default new Router({
@@ -35,6 +37,15 @@ export default new Router({
         showHeader: true,
         showBack: true,
         title: '优惠活动详情'
+      }
+    },
+    {
+      path: '/service',
+      component: Service,
+      meta: {
+        showHeader: true,
+        showFooter: true,
+        title: '常见问题'
       }
     }
   ]
