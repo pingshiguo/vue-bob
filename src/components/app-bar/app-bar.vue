@@ -27,18 +27,24 @@
     left 0
     z-index 1
     display flex
+    justify-content center
     align-items center
     height 44px
     background #fff
 
     .left, .right
-      flex-shrink 0
-      width 44px
-      height 44px
+      position absolute
+      top 0
+      bottom 0
+      z-index 1
+
+    .left
+      left 0
+
+    .right
+      right 0
 
     .title
-      width 100%
-      line-height 36px
       text-align center
       white-space nowrap
       text-overflow ellipsis
