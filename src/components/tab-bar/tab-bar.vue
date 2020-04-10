@@ -24,7 +24,7 @@
         <span class="content">首页</span>
       </div>
     </router-link>
-    <router-link to="/sponsor" class="tab-item" replace>
+    <router-link to="/sponsors" class="tab-item" replace>
       <div class="tab-icon">
         <img src="../../assets/images/icon_sponsor.png" alt="">
       </div>
