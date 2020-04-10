@@ -12,7 +12,7 @@
         </ul>
       </div>
     </div>
-    <div class="panel">
+    <div class="panel card">
       <div class="panel-hd">我的功能</div>
       <div class="panel-bd">
         <div class="grids">
@@ -99,7 +99,7 @@
         </div>
       </div>
     </div>
-    <a href="javascript:;" class="logout">退出登录</a>
+    <a href="javascript:;" class="logout card">退出登录</a>
   </main>
 </template>
 
@@ -145,11 +145,7 @@
 
   .panel
     height 258px
-    box-shadow 0 1px 8px 0 rgba(31, 32, 33, .04)
-    border-radius 8px
     margin 0 10px 10px
-    background #fff
-    overflow hidden
 
   .panel-hd
     padding-left 18px
@@ -186,12 +182,9 @@
 
   .logout
     display block
-    box-shadow 0 1px 8px 0 rgba(31, 32, 33, .04)
-    border-radius 8px
     margin 0 10px 26px
     line-height 50px
     text-align center
     font-size 14px
     color #333
-    background #fff
 </style>

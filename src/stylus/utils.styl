@@ -64,6 +64,21 @@
 .slide-left-enter, .slide-left-leave-to
   transform translateX(100%)
 
+
+.is-divider
+  position relative
+
+  &:after
+    content ''
+    position absolute
+    right 0
+    bottom 0
+    left 0
+    height 1px
+    border-bottom 1px solid #ddd
+    transform-origin 0 100%
+    transform scaleY(.5)
+
 .flex
   display flex
 
@@ -134,39 +149,19 @@
 
 .button
   display block
-  border-radius 4px
+  box-shadow 0 1px 4px 0 rgba(31, 32, 33, .04)
+  border-radius 8px
   line-height 40px
   text-align center
   font-size 16px
-  font-weight 700
-  color #3c99ff
-  background #f5f5f5
-
-  &:active
-    opacity .8
-
-  & + .button
-    margin-top 15px
-
-  &.is-mini
-    display inline-block
-    width auto
-    padding 0 15px
-    line-height 32px
-    font-size 14px
-
-  &.is-primary
-    color #fff
-    background #3c99ff
-
-  &.is-success
-    color #fff
-    background #4cd964
+  color #333
+  background #fff
 
 .card
-  box-shadow 0 2px 12px rgba(0, 0, 0, .1)
-  border-radius 4px
+  box-shadow 0 1px 8px 0 rgba(31, 32, 33, .04)
+  border-radius 8px
   background #fff
+  overflow hidden
 
 .mask
   position fixed
