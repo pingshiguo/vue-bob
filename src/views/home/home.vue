@@ -51,16 +51,21 @@
       </div>
     </div>
     <div class="game-nav-bar">
-      <div class="game-nav-item is-active">
-        <div class="game-nav-title">体育赛事</div>
-        <div class="game-nav-desc">SPORTS EVENTS</div>
-      </div>
-      <div class="game-nav-item">真人</div>
-      <div class="game-nav-item">电竞</div>
-      <div class="game-nav-item">棋牌</div>
-      <div class="game-nav-item">彩票</div>
-      <div class="game-nav-item">电游</div>
-      <div class="game-nav-item">自选</div>
+      <a
+        v-for="(item, index) in navs"
+        :key="index"
+        href="javascript:;"
+        class="game-nav-item"
+        :class="{'is-active': index === activeNav}"
+        @click="activeNav = index">
+        <div v-if="index === activeNav" class="game-nav-content">
+          <div class="game-nav-title">{{item.title}}</div>
+          <div class="game-nav-desc">{{item.desc}}</div>
+        </div>
+        <div v-else class="game-nav-content">
+          {{item.title.slice(0, 2)}}
+        </div>
+      </a>
     </div>
     <div class="game-list">
       <div
@@ -91,6 +96,7 @@
   import '../../stylus/swiper.styl'
 
   export default {
+    name: 'home',
     components: {
       Swiper,
       SwiperSlide
@@ -112,7 +118,34 @@
           '../../assets/images/banner_04.jpg',
           '../../assets/images/banner_05.jpg',
           '../../assets/images/banner_06.jpg'
-        ]
+        ],
+        navs: [
+          {
+            title: '体育赛事',
+            desc: 'SPORTS EVENTS'
+          },
+          {
+            title: '真人娱乐',
+            desc: 'LIVE CASINO'
+          },
+          {
+            title: '电子竞技',
+            desc: 'ELECTRONIC SPORTS'
+          },
+          {
+            title: '棋牌游戏',
+            desc: 'BOARD GAMES'
+          },
+          {
+            title: '彩票游戏',
+            desc: 'LOTTERY GAME'
+          },
+          {
+            title: '电子游艺',
+            desc: 'SLOT MACHINES'
+          }
+        ],
+        activeNav: 0
       }
     }
   }
@@ -238,17 +271,39 @@
   .game-nav-item
     position relative
     display flex
+    flex 1 1 auto
+    padding-bottom 7px
+    background-repeat no-repeat
+    background-size 102% 100%
+    transition all .2s
+
+    &.is-active
+      flex 0 0 auto
+      width 113px
+      background-image url(../../assets/images/game_nav_item_active.png)
+
+      .game-nav-content
+        animation-name scale
+        color #fff
+        background transparent
+
+        &:after
+          display none
+
+  .game-nav-content
+    position relative
+    display flex
     flex-direction column
     justify-content center
     align-items center
     width 100%
-    margin-bottom 7.5px
     text-align center
     font-size 14px
     color #666
     background #fff
+    animation-duration .5s
 
-    &:not(.is-active):after
+    &:after
       content ''
       position absolute
       left 0
@@ -260,17 +315,8 @@
       opacity .2
       transform translateY(100%)
 
-    &.is-active
-      flex-shrink 0
-      width 113px
-      margin-right -1px
-      margin-bottom 0
-      color #fff
-      background url(../../assets/images/game_nav_item_active.png) no-repeat
-      background-size 100% auto
-
   .game-nav-title
-    padding-top 6px
+    padding-top 10px
 
   .game-nav-desc
     width 200%
@@ -283,7 +329,7 @@
     right 0
     bottom 0
     left 0
-    padding 42px 10px 52px
+    padding 45px 10px 52px
     overflow hidden
     overflow-y auto
     -webkit-overflow-scrolling touch
@@ -332,4 +378,11 @@
       margin-left 2px
       font-size 12px
       color #39404d
+
+  @keyframes scale
+    0%
+      transform scale(0)
+
+    100%
+      transform scale(1)
 </style>
