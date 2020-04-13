@@ -12,7 +12,11 @@
       </a>
     </nav>
     <ul class="activity-list">
-      <li class="activity-item" @click="$router.push('/activities/9')">
+      <li
+        v-for="item in 5"
+        :key="item"
+        class="activity-item"
+        @click="$router.push('/activities/' + item)">
         <div class="activity-banner">
           <img src="https://avatar.xaqlt.com/file1/23,ee08bfa8fae6" alt="">
           <div class="activity-mask"></div>
@@ -24,11 +28,7 @@
           查看详情
           <i class="more"></i>
         </div>
-        <span
-          class="activity-tag"
-          style="background-image: url(https://www.bob2020.com/assets/mine/discount/latest_activity.png)">
-          最新活动
-        </span>
+        <span class="activity-tag">最新活动</span>
       </li>
     </ul>
   </main>
@@ -72,14 +72,19 @@
       position absolute
       bottom 0
       left 25%
+      display inline-block
       width 50%
       border-bottom 2px solid transparent
+      transition all .2s
+      transform-origin 50% 50%
+      transform scaleX(0)
 
     &.is-active
       color #0a91fb
 
       &:after
         border-bottom-color #0a91fb
+        transform scaleX(1)
 
   .activity-list
     margin-top 49px
@@ -148,6 +153,6 @@
     text-align center
     font-size 12px
     color #fff
-    background-repeat no-repeat
+    background url(https://www.bob2020.com/assets/mine/discount/latest_activity.png) no-repeat
     background-size 100% 100%
 </style>
