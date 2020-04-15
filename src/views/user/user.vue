@@ -1,6 +1,6 @@
 <template>
   <main class="user">
-    <div class="user-header">
+    <div class="user-hd">
       <div class="flex is-middle flex-item">
         <div class="user-avatar">
           <img src="https://www.bob2020.com/assets/mine/3.0/icon_notlogged_avatar.png"
@@ -23,26 +23,26 @@
         </div>
       </div>
     </div>
-    <div class="user-body">
+    <div class="user-bd">
       <div class="user-wallet">
         <div class="user-wallet-content">
           <div class="user-wallet-title">中心钱包:</div>
           <div class="user-wallet-money">0.00</div>
         </div>
         <div class="user-nav-bar">
-          <div class="user-nav-item">
+          <div class="user-nav-item" @click="showDialog = true">
             <img src="../../assets/images/icon_money_in.png" alt="">
             <div class="user-nav-label">存款</div>
           </div>
-          <div class="user-nav-item">
+          <div class="user-nav-item" @click="showDialog = true">
             <img src="../../assets/images/icon_money_out.png" alt="">
             <div class="user-nav-label">取款</div>
           </div>
-          <div class="user-nav-item">
+          <div class="user-nav-item" @click="showDialog = true">
             <img src="../../assets/images/icon_money_transfer.png" alt="">
             <div class="user-nav-label">转账</div>
           </div>
-          <div class="user-nav-item">
+          <div class="user-nav-item" @click="showDialog = true">
             <img src="../../assets/images/icon_vip.png" alt="">
             <div class="user-nav-label">VIP详情</div>
           </div>
@@ -64,91 +64,114 @@
         <div class="panel-hd">我的功能</div>
         <div class="panel-bd">
           <div class="grids">
-            <router-link to="/" class="grid">
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_betting.png"
                   alt="">
               </div>
               <div class="grid-label">投注记录</div>
-            </router-link>
-            <router-link to="/" class="grid">
+            </a>
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_transaction.png"
                   alt="">
               </div>
               <div class="grid-label">交易记录</div>
-            </router-link>
-            <router-link to="/" class="grid">
+            </a>
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_invite.png"
                   alt="">
               </div>
               <div class="grid-label">邀请奖励</div>
-            </router-link>
-            <router-link to="/" class="grid">
+            </a>
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_opinion.png"
                   alt="">
               </div>
               <div class="grid-label">意见反馈</div>
-            </router-link>
-            <router-link to="/" class="grid">
+            </a>
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_personal.png"
                   alt="">
               </div>
               <div class="grid-label">个人资料</div>
-            </router-link>
-            <router-link to="/" class="grid">
+            </a>
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_join.png"
                   alt="">
               </div>
               <div class="grid-label">加入我们</div>
-            </router-link>
-            <router-link to="/" class="grid">
+            </a>
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_aboutus.png"
                   alt="">
               </div>
               <div class="grid-label">关于我们</div>
-            </router-link>
-            <router-link to="/" class="grid">
+            </a>
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_bob.png"
                   alt="">
               </div>
               <div class="grid-label">BOB综合</div>
-            </router-link>
-            <router-link to="/" class="grid">
+            </a>
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_bobsports.png"
                   alt="">
               </div>
               <div class="grid-label">BOB体育</div>
-            </router-link>
-            <router-link to="/" class="grid">
+            </a>
+            <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_setting.png"
                   alt="">
               </div>
               <div class="grid-label">设置</div>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>
       <a href="javascript:;" class="logout card">退出登录</a>
     </div>
+
+    <transition name="fade">
+      <div v-show="showDialog" class="mask"></div>
+    </transition>
+    <transition enter-active-class="scale-in" leave-active-class="scale-out">
+      <div v-show="showDialog" class="dialog">
+        <div class="dialog-hd">
+          <h3 class="dialog-title">登录提醒</h3>
+        </div>
+        <div class="dialog-bd">
+          <div class="dialog-content">此功能仅对注册用户开放</div>
+        </div>
+        <div class="dialog-ft">
+          <a
+            href="javascript:;"
+            class="button is-close"
+            @click="showDialog = false">
+            关闭
+          </a>
+          <a href="javascript:;" class="button is-login">注册登录</a>
+        </div>
+      </div>
+    </transition>
   </main>
 </template>
 
@@ -161,7 +184,8 @@
           'https://static.xaqlt.com/imgs/banner/76c718e50a75196a0a0f9f75f2d9ee703600d5c4.png',
           'https://static.xaqlt.com/imgs/banner/df1e8cd450ddaea7140d16c7172fa799cea50d03.png',
           'https://static.xaqlt.com/imgs/banner/ec279a0ee867b2391443b1d4ab500036e99a3576.png'
-        ]
+        ],
+        showDialog: false
       }
     }
   }
@@ -169,7 +193,7 @@
 
 <style lang="stylus" scoped>
 
-  .user-header
+  .user-hd
     position relative
     display flex
     align-items center
@@ -232,7 +256,7 @@
     font-size 14px
     color #fff
 
-  .user-body
+  .user-bd
     position relative
     top -25px
 
@@ -346,4 +370,71 @@
     text-align center
     font-size 14px
     color #333
+
+  .mask
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index 999
+    background rgba(0, 0, 0, .6)
+
+  .dialog
+    position fixed
+    top 50%
+    left 50%
+    z-index 999
+    width 280px
+    border-radius 10px
+    margin 0 auto
+    background #f4f7ff
+    overflow hidden
+    transform translate(-50%, -50%)
+
+  .dialog-hd
+    display flex
+    align-items center
+    height 40px
+    background #fff
+
+  .dialog-title
+    flex 1
+    margin 0
+    line-height 40px
+    text-align center
+    font-size 18px
+    font-weight 400
+    color #000
+
+  .dialog-bd
+    padding 10px
+
+  .dialog-content
+    display flex
+    justify-content center
+    align-items center
+    min-height 60px
+    line-height 20px
+    font-size 14px
+    color #000
+
+  .dialog-ft
+    display flex
+    justify-content space-between
+    align-items center
+    padding 0 8px 8px
+
+    .button
+      width 100%
+      color #fff
+
+      & + .button
+        margin-left 8px
+
+      &.is-close
+        background linear-gradient(90deg, #4e8cff, #2472ff)
+
+      &.is-login
+        background linear-gradient(90deg, #00daf2, #00b1ff)
 </style>
