@@ -56,9 +56,9 @@
         :key="index"
         href="javascript:;"
         class="game-nav-item"
-        :class="{'is-active': index === activeNav}"
-        @click="activeNav = index">
-        <div v-if="index === activeNav" class="game-nav-content">
+        :class="{'is-active': index === activeIndex}"
+        @click="handleChangeActive(index)">
+        <div v-if="index === activeIndex" class="game-nav-content">
           <div class="game-nav-title">{{item.title}}</div>
           <div class="game-nav-desc">{{item.desc}}</div>
         </div>
@@ -67,10 +67,11 @@
         </div>
       </a>
     </div>
-    <div class="game-list">
+    <div ref="scroller" class="game-list">
       <div
-        v-for="item in 5"
+        v-for="item in 10"
         :key="item"
+        ref="item"
         class="game-item"
         style="background-image: url(https://www.bob2020.com/assets/home/gameList/card_sports_bob.png)">
         <div class="game-item-hd">
@@ -81,7 +82,7 @@
         <div class="game-item-bd">
           <div class="game-title">BOB体育</div>
           <div class="game-desc">
-            625
+            625 {{item}}
             <span>体育赛事</span>
           </div>
         </div>
@@ -145,7 +146,13 @@
             desc: 'SLOT MACHINES'
           }
         ],
-        activeNav: 0
+        activeIndex: 0
+      }
+    },
+    methods: {
+      handleChangeActive (index) {
+        this.activeIndex = index
+        this.$refs.scroller.scrollTop = this.$refs.item[index].offsetTop - 45
       }
     }
   }
@@ -332,6 +339,7 @@
     padding 45px 10px 52px
     overflow hidden
     overflow-y auto
+    scroll-behavior smooth
     -webkit-overflow-scrolling touch
 
   .game-item
