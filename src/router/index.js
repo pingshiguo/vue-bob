@@ -15,6 +15,8 @@ const Activity = () => import('../views/activity/activity')
 
 const Service = () => import('../views/service/service')
 
+const Login = () => import('../views/login/login')
+
 Vue.use(Router)
 
 export default new Router({
@@ -79,6 +81,10 @@ export default new Router({
         showFooter: true,
         title: '常见问题'
       }
+    },
+    {
+      path: '/login',
+      component: Login
     }
   ]
 })
