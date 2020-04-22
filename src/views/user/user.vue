@@ -136,14 +136,14 @@
               </div>
               <div class="grid-label">BOB体育</div>
             </a>
-            <a href="javascript:;" class="grid" @click="showDialog = true">
+            <router-link to="/setting" class="grid">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_setting.png"
                   alt="">
               </div>
               <div class="grid-label">设置</div>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>

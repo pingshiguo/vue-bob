@@ -45,12 +45,12 @@
     </div>
 
     <div class="cells">
-      <div class="cell is-access">
+      <router-link to="/about" class="cell is-access">
         <div class="cell-bd">
           <div class="cell-title">关于我们</div>
         </div>
         <div class="cell-ft"></div>
-      </div>
+      </router-link>
     </div>
   </main>
 </template>
