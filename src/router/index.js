@@ -15,6 +15,8 @@ const Activity = () => import('../views/activity/activity')
 
 const Service = () => import('../views/service/service')
 
+const Setting = () => import('../views/setting/setting')
+
 Vue.use(Router)
 
 export default new Router({
@@ -78,6 +80,15 @@ export default new Router({
         showHeader: true,
         showFooter: true,
         title: '常见问题'
+      }
+    },
+    {
+      path: '/setting',
+      component: Setting,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '个人设置'
       }
     }
   ]

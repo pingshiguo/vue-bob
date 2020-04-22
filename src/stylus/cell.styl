@@ -1,5 +1,16 @@
 @import "mixins.styl"
 
+.cells
+  background #fff
+
+  &.is-show-divider .cell:not(:last-child)
+    bottom-1px-border(#ddd)
+
+    &:after
+      right 15px
+      left 15px
+
+
 .cell
   position relative
   display flex
@@ -12,18 +23,21 @@
   color #333
 
   &.is-access
-    .cell-ft:after
-      content ''
-      position absolute
-      top 50%
-      right 15px
-      display inline-block
-      width 8px
-      height 8px
-      border-top 1px solid #ddd
-      border-right 1px solid #ddd
-      margin-top -5px
-      transform rotate(45deg)
+    .cell-ft
+      padding-right 12px
+
+      &:after
+        content ''
+        position absolute
+        top 50%
+        right 15px
+        display inline-block
+        width 8px
+        height 8px
+        border-top 1px solid #999
+        border-right 1px solid #999
+        margin-top -5px
+        transform rotate(45deg)
 
 .cell-hd
   width 24px
@@ -35,7 +49,7 @@
   min-width 0
 
 .cell-ft
-  font-size 12px
+  font-size 14px
   color #999
 
 .cell-desc
