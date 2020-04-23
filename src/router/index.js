@@ -15,7 +15,9 @@ const Activity = () => import('../views/activity/activity')
 
 const Service = () => import('../views/service/service')
 
-const Login = () => import('../views/login/login')
+const Setting = () => import('../views/setting/setting')
+
+const About = () => import('../views/about/about')
 
 Vue.use(Router)
 
@@ -85,6 +87,24 @@ export default new Router({
     {
       path: '/login',
       component: Login
+    },
+    {
+      path: '/setting',
+      component: Setting,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '个人设置'
+      }
+    },
+    {
+      path: '/about',
+      component: About,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '关于我们'
+      }
     }
   ]
 })
