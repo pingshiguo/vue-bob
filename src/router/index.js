@@ -19,6 +19,8 @@ const Setting = () => import('../views/setting/setting')
 
 const About = () => import('../views/about/about')
 
+const Login = () => import('../views/login/login')
+
 Vue.use(Router)
 
 export default new Router({
