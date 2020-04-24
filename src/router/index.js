@@ -23,6 +23,8 @@ const Setting = () => import('../views/setting/setting')
 
 const About = () => import('../views/about/about')
 
+const Login = () => import('../views/login/login')
+
 Vue.use(Router)
 
 export default new Router({
@@ -105,6 +107,10 @@ export default new Router({
         showFooter: true,
         title: '常见问题'
       }
+    },
+    {
+      path: '/login',
+      component: Login
     },
     {
       path: '/setting',
