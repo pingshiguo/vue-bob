@@ -178,6 +178,10 @@
   .section
     margin 0 10px
 
+  .collapse .cell-hd
+    width 24px
+    height 24px
+
   .collapse:not(:last-child) .collapse-hd
     position relative
     bottom-1px-border(#ddd)
@@ -210,8 +214,8 @@
     align-items center
     width 170px
     height 40px
+    border-radius 8px
     margin-top -15px
-    font-size 16px
     color #fff
 
     &.is-feedback

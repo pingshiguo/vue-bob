@@ -5,6 +5,10 @@ const Home = () => import('../views/home/home')
 
 const User = () => import('../views/user/user')
 
+const Profile = () => import('../views/profile/profile')
+
+const Username = () => import('../views/username/username')
+
 const Sponsors = () => import('../views/sponsors/sponsors')
 
 const Sponsor = () => import('../views/sponsor/sponsor')
@@ -37,6 +41,24 @@ export default new Router({
       meta: {
         showFooter: true,
         title: '我的'
+      }
+    },
+    {
+      path: '/profile',
+      component: Profile,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '个人资料'
+      }
+    },
+    {
+      path: '/profile/username',
+      component: Username,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '个人资料'
       }
     },
     {

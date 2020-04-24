@@ -1,6 +1,6 @@
 <template>
   <main class="setting">
-    <div class="cells is-show-divider">
+    <div class="cells">
       <div class="cell is-access">
         <div class="cell-bd">
           <div class="cell-title">手机号码</div>

@@ -96,14 +96,14 @@
               </div>
               <div class="grid-label">意见反馈</div>
             </a>
-            <a href="javascript:;" class="grid" @click="showDialog = true">
+            <router-link to="/profile" class="grid">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_personal.png"
                   alt="">
               </div>
               <div class="grid-label">个人资料</div>
-            </a>
+            </router-link>
             <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
@@ -112,14 +112,14 @@
               </div>
               <div class="grid-label">加入我们</div>
             </a>
-            <a href="javascript:;" class="grid" @click="showDialog = true">
+            <router-link to="/about" class="grid">
               <div class="grid-icon">
                 <img
                   src="https://www.bob2020.com/assets/mine/3.0/icon_my_aboutus.png"
                   alt="">
               </div>
               <div class="grid-label">关于我们</div>
-            </a>
+            </router-link>
             <a href="javascript:;" class="grid" @click="showDialog = true">
               <div class="grid-icon">
                 <img
