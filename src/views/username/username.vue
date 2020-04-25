@@ -36,7 +36,7 @@
     position relative
     border-radius 0
     padding 15px
-    box-shadow 0 0 0 0
+    box-shadow none
     line-height 24px
     font-size 16px
     color #333

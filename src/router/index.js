@@ -13,6 +13,8 @@ const Phone = () => import('../views/phone/phone')
 
 const Email = () => import('../views/email/email')
 
+const Password = () => import('../views/password/password')
+
 const Sponsors = () => import('../views/sponsors/sponsors')
 
 const Sponsor = () => import('../views/sponsor/sponsor')
@@ -87,6 +89,15 @@ export default new Router({
         showHeader: true,
         showBack: true,
         title: '邮箱地址'
+      }
+    },
+    {
+      path: '/password',
+      component: Password,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '修改密码'
       }
     },
     {

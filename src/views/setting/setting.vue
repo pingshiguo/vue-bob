@@ -13,12 +13,12 @@
         </div>
         <div class="cell-ft"></div>
       </router-link>
-      <div class="cell is-access">
+      <router-link to="/password" class="cell is-access">
         <div class="cell-bd">
           <div class="cell-title">修改密码</div>
         </div>
         <div class="cell-ft">用于账号登录</div>
-      </div>
+      </router-link>
     </div>
 
     <div class="cells">

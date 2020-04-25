@@ -61,7 +61,7 @@
 <style lang="stylus" scoped>
 
   .join
-    padding 20px 15px
+    padding 15px
     background #f1f4f5
 
   .form-tips .form-label

@@ -31,7 +31,7 @@
 <style lang="stylus" scoped>
 
   .email
-    padding 20px 15px
+    padding 15px
 
   .button
     margin-top 15px
