@@ -34,31 +34,34 @@
 
   .form-cell
     position relative
-    padding 15px 10px 10px
+    border-radius 0
+    padding 15px
+    box-shadow 0 0 0 0
+    line-height 24px
     font-size 16px
     color #333
 
-    &:not(:last-child)
-      bottom-1px-border(#ddd)
-
-      &:after
-        right 10px
-        left 10px
-
     .cell-hd
-      margin-bottom 15px
+      margin-bottom 10px
 
     .input
       height 24px
       font-size 16px
       color #333
 
+    & + .cell
+      top-1px-border(#ddd)
+
+      &:before
+        right 15px
+        left 15px
+
   .cell
     height 56px
 
   .tips
     margin 0 10px
-    line-height 14px
+    line-height 16px
     font-size 12px
     color #333
 

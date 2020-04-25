@@ -23,6 +23,10 @@ const Setting = () => import('../views/setting/setting')
 
 const About = () => import('../views/about/about')
 
+const Agent = () => import('../views/agent/agent')
+
+const Join = () => import('../views/join/join')
+
 const Login = () => import('../views/login/login')
 
 Vue.use(Router)
@@ -128,6 +132,24 @@ export default new Router({
         showHeader: true,
         showBack: true,
         title: '关于我们'
+      }
+    },
+    {
+      path: '/agent',
+      component: Agent,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '合营计划'
+      }
+    },
+    {
+      path: '/join',
+      component: Join,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '加入我们'
       }
     }
   ]

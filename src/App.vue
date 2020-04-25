@@ -1,19 +1,21 @@
 <template>
   <div id="app">
-    <transition name="slide-down">
-      <app-bar v-show="showHeader">
-        <go-back v-show="showBack" slot="left"/>
-        {{title}}
-      </app-bar>
-    </transition>
-    <transition name="slide-in">
-      <router-view
-        class="container"
-        :class="{'is-show-header': showHeader, 'is-show-footer': showFooter}"/>
-    </transition>
-    <transition name="slide-up">
-      <tab-bar v-show="showFooter"/>
-    </transition>
+    <div
+      class="container"
+      :class="{'is-show-header': showHeader, 'is-show-footer': showFooter}">
+      <transition name="slide-down">
+        <app-bar v-show="showHeader">
+          <go-back v-show="showBack" slot="left"/>
+          {{title}}
+        </app-bar>
+      </transition>
+      <transition name="slide-in">
+        <router-view class="page"/>
+      </transition>
+      <transition name="slide-up">
+        <tab-bar v-show="showFooter"/>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -63,4 +65,7 @@
 
   .container
     min-height calc(var(--vh, 1vh) * 100)
+
+  .page
+    flex 1 0 auto
 </style>
