@@ -31,16 +31,22 @@
     </div>
 
     <div class="cells is-show-divider">
-      <div class="cell">
+      <!--<div class="cell">
         <div class="cell-bd">
           <div class="cell-title">夜间模式</div>
         </div>
-      </div>
+        <div class="cell-ft">
+          <input type="checkbox" class="form-switch">
+        </div>
+      </div>-->
       <div class="cell">
         <div class="cell-bd">
           <div class="cell-title">免转钱包</div>
         </div>
-        <div class="cell-ft">切换场馆，自动到账</div>
+        <div class="cell-ft">
+          切换场馆，自动到账
+          <input type="checkbox" class="form-switch">
+        </div>
       </div>
     </div>
 
@@ -66,4 +72,7 @@
   .cells
     border-radius 5px
     margin 15px 15px 0
+
+  .form-switch
+    margin-left 15px
 </style>
