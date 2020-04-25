@@ -7,7 +7,7 @@
         </div>
         <div class="cell-ft">ping001</div>
       </div>
-      <router-link to="/profile/username" class="cell is-access">
+      <router-link to="/username" class="cell is-access">
         <div class="cell-bd">
           <div class="cell-title">真实姓名</div>
         </div>

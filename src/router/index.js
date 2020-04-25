@@ -9,6 +9,10 @@ const Profile = () => import('../views/profile/profile')
 
 const Username = () => import('../views/username/username')
 
+const Phone = () => import('../views/phone/phone')
+
+const Email = () => import('../views/email/email')
+
 const Sponsors = () => import('../views/sponsors/sponsors')
 
 const Sponsor = () => import('../views/sponsor/sponsor')
@@ -59,12 +63,30 @@ export default new Router({
       }
     },
     {
-      path: '/profile/username',
+      path: '/username',
       component: Username,
       meta: {
         showHeader: true,
         showBack: true,
         title: '个人资料'
+      }
+    },
+    {
+      path: '/phone',
+      component: Phone,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '手机号码'
+      }
+    },
+    {
+      path: '/email',
+      component: Email,
+      meta: {
+        showHeader: true,
+        showBack: true,
+        title: '邮箱地址'
       }
     },
     {

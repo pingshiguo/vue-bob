@@ -1,18 +1,18 @@
 <template>
   <main class="setting">
     <div class="cells">
-      <div class="cell is-access">
+      <router-link to="/phone" class="cell is-access">
         <div class="cell-bd">
           <div class="cell-title">手机号码</div>
         </div>
         <div class="cell-ft">用于找回密码</div>
-      </div>
-      <div class="cell is-access">
+      </router-link>
+      <router-link to="/email" class="cell is-access">
         <div class="cell-bd">
           <div class="cell-title">邮箱地址</div>
         </div>
         <div class="cell-ft"></div>
-      </div>
+      </router-link>
       <div class="cell is-access">
         <div class="cell-bd">
           <div class="cell-title">修改密码</div>
